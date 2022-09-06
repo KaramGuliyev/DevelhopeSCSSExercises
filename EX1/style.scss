@@ -1,29 +1,32 @@
+$second: green;
+$first: red;
+$third: blue;
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid red;
+  border: 1px solid $first;
   padding: 1rem;
-  .wrapper {
-    justify-content: center;
-    align-items: center;
-  }
   h1 {
+    margin: auto;
     text-align: center;
+    color: $second;
+    border-bottom: 1px solid $third;
+    width: 35rem;
   }
 
   section {
+    padding-top: 1rem;
     display: flex;
     gap: 1rem;
     flex-direction: row;
     article:nth-child(even) {
-      border: 1px solid red;
+      color: $third;
     }
     article:nth-child(odd) {
-      border: 1px solid green;
+      color: $first;
     }
-    article{
-        padding: 1rem;
+    article {
+      border: 1px solid $second;
+      padding: 1rem;
     }
   }
 }
