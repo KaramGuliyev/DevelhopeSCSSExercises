@@ -1,28 +1,27 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid red;
   padding: 1rem;
 }
-.container .wrapper {
-  justify-content: center;
-  align-items: center;
-}
 .container h1 {
+  margin: auto;
   text-align: center;
+  color: green;
+  border-bottom: 1px solid blue;
+  width: 35rem;
 }
 .container section {
+  padding-top: 1rem;
   display: flex;
   gap: 1rem;
   flex-direction: row;
 }
 .container section article:nth-child(even) {
-  border: 1px solid red;
+  color: blue;
 }
 .container section article:nth-child(odd) {
-  border: 1px solid green;
+  color: red;
 }
 .container section article {
+  border: 1px solid green;
   padding: 1rem;
 }/*# sourceMappingURL=style.css.map */
