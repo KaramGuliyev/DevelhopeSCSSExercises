@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  padding: 1rem;
+  .wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    text-align: center;
+  }
+
+  section {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    article:nth-child(even) {
+      border: 1px solid red;
+    }
+    article:nth-child(odd) {
+      border: 1px solid green;
+    }
+    article{
+        padding: 1rem;
+    }
+  }
+}
