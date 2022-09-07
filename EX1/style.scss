@@ -1,15 +1,15 @@
-$second: green;
-$first: red;
-$third: blue;
+$colorPrimary: green;
+$colorSecondary: red;
+$colorTertiary: blue;
 
 .container {
-  border: 1px solid $first;
+  border: 1px solid $colorSecondary;
   padding: 1rem;
   h1 {
     margin: auto;
     text-align: center;
-    color: $second;
-    border-bottom: 1px solid $third;
+    color: $colorPrimary;
+    border-bottom: 1px solid $colorTertiary;
     width: 35rem;
   }
 
@@ -18,14 +18,14 @@ $third: blue;
     display: flex;
     gap: 1rem;
     flex-direction: row;
-    article:nth-child(even) {
-      color: $third;
-    }
     article:nth-child(odd) {
-      color: $first;
+      color: $colorTertiary;
+    }
+    article:nth-child(even) {
+      color: $colorSecondary;
     }
     article {
-      border: 1px solid $second;
+      border: 1px solid $colorPrimary;
       padding: 1rem;
     }
   }

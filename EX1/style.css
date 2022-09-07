@@ -15,10 +15,10 @@
   gap: 1rem;
   flex-direction: row;
 }
-.container section article:nth-child(even) {
+.container section article:nth-child(odd) {
   color: blue;
 }
-.container section article:nth-child(odd) {
+.container section article:nth-child(even) {
   color: red;
 }
 .container section article {
