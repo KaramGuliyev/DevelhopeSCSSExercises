@@ -1,0 +1,63 @@
+@use "sass:color";
+
+$colorPrimary: red;
+$colorSecondary: green;
+$colorTertiary: blue;
+
+@function color($color) {
+  $colorFinal: color.adjust($color, $lightness: 10%);
+  @return $colorFinal;
+}
+@function colorBorder($border) {
+  $borderFinal: color.adjust($border, $lightness: 2%);
+  @return $borderFinal;
+}
+@function fontSize($fontsize) {
+  $fontSizeFinal: calc($fontsize);
+  @return $fontSizeFinal;
+}
+
+@mixin colorChangeText($color: transparent, $border: transparent, $fontsize: 1rem) {
+  color: color($color);
+  border: 1px solid colorBorder($border);
+  font-size: fontSize($fontsize);
+  @content;
+}
+
+.container {
+  @include colorChangeText($border: $colorPrimary);
+  padding: 1rem;
+  text-align: center;
+  h1 {
+    margin: auto;
+    @include colorChangeText($color: $colorSecondary, $fontsize: 3rem) {
+      border-bottom: 1px solid $colorTertiary;
+    }
+    width: 35rem;
+  }
+
+  section {
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: row;
+    article:nth-child(odd) {
+      @include colorChangeText($color: $colorTertiary, $border: $colorSecondary);
+    }
+    article:nth-child(even) {
+      @include colorChangeText($color: $colorPrimary, $border: $colorSecondary);
+    }
+
+    article {
+      @include colorChangeText($border: $colorSecondary);
+    }
+
+    article.fullW {
+      @include colorChangeText($colorSecondary, $colorTertiary, 3vh);
+      width: 100%;
+      font-size: 3vh;
+      text-align: center;
+    }
+  }
+}
