@@ -1,0 +1,32 @@
+$second: green;
+$first: red;
+$third: blue;
+
+.container {
+  border: 1px solid $first;
+  padding: 1rem;
+  h1 {
+    margin: auto;
+    text-align: center;
+    color: $second;
+    border-bottom: 1px solid $third;
+    width: 35rem;
+  }
+
+  section {
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    article:nth-child(even) {
+      color: $third;
+    }
+    article:nth-child(odd) {
+      color: $first;
+    }
+    article {
+      border: 1px solid $second;
+      padding: 1rem;
+    }
+  }
+}
