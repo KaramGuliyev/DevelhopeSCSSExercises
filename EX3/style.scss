@@ -1,12 +1,27 @@
+@use "sass:color";
+
 $colorPrimary: red;
 $colorSecondary: green;
 $colorTertiary: blue;
 
-@mixin colorChangeText($color:black, $border : 1px, $fontsize : 1rem) {
-  color: $color;
-  border: 1px solid $border;
-  font-size: $fontsize;
+@function color($color) {
+  $colorFinal: color.adjust($color, $lightness: 10%);
+  @return $colorFinal;
+}
+@function colorBorder($border) {
+  $borderFinal: color.adjust($border, $lightness: 2%);
+  @return $borderFinal;
+}
+@function fontSize($fontsize) {
+  $fontSizeFinal: calc($fontsize);
+  @return $fontSizeFinal;
+}
 
+@mixin colorChangeText($color: transparent, $border: transparent, $fontsize: 1rem) {
+  color: color($color);
+  border: 1px solid colorBorder($border);
+  font-size: fontSize($fontsize);
+  @content;
 }
 
 .container {
@@ -15,8 +30,9 @@ $colorTertiary: blue;
   text-align: center;
   h1 {
     margin: auto;
-    @include colorChangeText($color: $colorSecondary, $fontsize: 3rem);
-    border-bottom: 1px solid $colorTertiary;
+    @include colorChangeText($color: $colorSecondary, $fontsize: 3rem) {
+      border-bottom: 1px solid $colorTertiary;
+    }
     width: 35rem;
   }
 
@@ -27,15 +43,16 @@ $colorTertiary: blue;
     width: 100%;
     flex-direction: row;
     article:nth-child(odd) {
-      @include colorChangeText($colorTertiary);
+      @include colorChangeText($color: $colorTertiary, $border: $colorSecondary);
     }
     article:nth-child(even) {
-      @include colorChangeText($colorPrimary);
+      @include colorChangeText($color: $colorPrimary, $border: $colorSecondary);
     }
 
     article {
-      @include colorChangeText($border: $colorSecondary)
+      @include colorChangeText($border: $colorSecondary);
     }
+
     article.fullW {
       @include colorChangeText($colorSecondary, $colorTertiary, 3vh);
       width: 100%;
