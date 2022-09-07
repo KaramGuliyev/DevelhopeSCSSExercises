@@ -1,0 +1,49 @@
+$colorPrimary: red;
+$colorSecondary: green;
+$colorTertiary: blue;
+
+@mixin colorChangeText($color) {
+  color: $color;
+}
+@mixin colorChangeBorder($color) {
+  border: 1px solid $color;
+}
+
+.container {
+  @include colorChangeBorder($colorPrimary);
+  padding: 1rem;
+  text-align: center;
+  h1 {
+    margin: auto;
+    @include colorChangeText($colorSecondary);
+    border-bottom: 1px solid $colorTertiary;
+    width: 35rem;
+  }
+
+
+  section {
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: row;
+    article:nth-child(odd) {
+      @include colorChangeText($colorTertiary);
+    }
+    article:nth-child(even) {
+      @include colorChangeText($colorPrimary);
+    }
+
+    article {
+      padding: 1rem;
+      @include colorChangeBorder($colorSecondary)
+    }
+    article.fullW {
+      @include colorChangeBorder($colorTertiary);
+      @include colorChangeText($colorSecondary);
+      width: 100%;
+      font-size: 3vh;
+      text-align: center;
+    }
+  }
+}
