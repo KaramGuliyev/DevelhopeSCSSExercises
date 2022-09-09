@@ -1,7 +1,11 @@
+.testColor {
+  background-color: #660000;
+}
+
 .container {
   color: transparent;
   border: 1px solid red;
-  font-size: 1rem;
+  font-size: 16;
   padding: 1rem;
   text-align: center;
 }
@@ -9,7 +13,7 @@
   margin: auto;
   color: green;
   border: 1px solid transparent;
-  font-size: 3rem;
+  font-size: 16;
   border-bottom: 1px solid blue;
   width: 35rem;
 }
@@ -18,7 +22,7 @@
   margin-top: 1rem;
   color: green;
   border: 1px solid red;
-  font-size: 2rem;
+  font-size: 32;
 }
 .container section {
   padding-top: 1rem;
@@ -30,17 +34,17 @@
 .container section article:nth-child(odd) {
   color: colorFinal(blue);
   border: 1px solid borderFinal(green);
-  font-size: 1rem;
+  font-size: 16;
 }
 .container section article:nth-child(even) {
   color: red;
   border: 1px solid green;
-  font-size: 1rem;
+  font-size: 16;
 }
 .container section article {
   color: blue;
   border: 1px solid green;
-  font-size: 1rem;
+  font-size: 16;
 }
 .container section article.fullW {
   color: green;
@@ -49,4 +53,102 @@
   width: 100%;
   font-size: 3vh;
   text-align: center;
+}
+.container section div {
+  color: gray;
+  border: 1px solid red;
+  font-size: 16;
+  width: 5.625rem;
+  height: 2.8125rem;
+}
+.container .newSection div:nth-child(1) {
+  background-color: #f2f2f2;
+  color: #0d0d0d;
+}
+.container .newSection div:nth-child(2) {
+  background-color: #e6e6e6;
+  color: #1a1a1a;
+}
+.container .newSection div:nth-child(3) {
+  background-color: #d9d9d9;
+  color: #262626;
+}
+.container .newSection div:nth-child(4) {
+  background-color: #cccccc;
+  color: #333333;
+}
+.container .newSection div:nth-child(5) {
+  background-color: #bfbfbf;
+  color: #404040;
+}
+.container .newSection div:nth-child(6) {
+  background-color: #b3b3b3;
+  color: #4d4d4d;
+}
+.container .newSection div:nth-child(7) {
+  background-color: #a6a6a6;
+  color: #595959;
+}
+.container .newSection div:nth-child(8) {
+  background-color: #999999;
+  color: #666666;
+}
+.container .newSection div:nth-child(9) {
+  background-color: #8c8c8c;
+  color: #737373;
+}
+.container .newSection div:nth-child(10) {
+  background-color: gray;
+  color: gray;
+  color: red;
+  background-color: blue;
+}
+.container .newSection div:nth-child(11) {
+  background-color: #737373;
+  color: #8c8c8c;
+}
+.container .newSection div:nth-child(12) {
+  background-color: #666666;
+  color: #999999;
+}
+.container .newSection div:nth-child(13) {
+  background-color: #595959;
+  color: #a6a6a6;
+}
+.container .newSection div:nth-child(14) {
+  background-color: #4d4d4d;
+  color: #b3b3b3;
+}
+.container .newSection div:nth-child(15) {
+  background-color: #404040;
+  color: #bfbfbf;
+}
+.container .newSection div:nth-child(16) {
+  background-color: #333333;
+  color: #cccccc;
+}
+.container .newSection div:nth-child(17) {
+  background-color: #262626;
+  color: #d9d9d9;
+}
+.container .newSection div:nth-child(18) {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+}
+.container .newSection div:nth-child(19) {
+  background-color: #0d0d0d;
+  color: #f2f2f2;
+}
+.container .newSection div:nth-child(20) {
+  background-color: black;
+  color: white;
+}
+.container .newSection .fs-1rem {
+  font-size: 1rem;
+}
+.container .newSection .fs-2rem {
+  font-size: 2rem;
+}
+.container .newSection .fs-3rem {
+  font-size: 3rem;
 }/*# sourceMappingURL=style.css.map */
