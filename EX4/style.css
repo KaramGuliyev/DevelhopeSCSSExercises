@@ -18,7 +18,7 @@
   margin-top: 1rem;
   color: green;
   border: 1px solid red;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .container section {
   padding-top: 1rem;
@@ -26,6 +26,11 @@
   gap: 1rem;
   width: 100%;
   flex-direction: row;
+}
+.container section article {
+  color: blue;
+  border: 1px solid green;
+  font-size: 1rem;
 }
 .container section article:nth-child(odd) {
   color: colorFinal(blue);
@@ -38,15 +43,12 @@
   font-size: 1rem;
 }
 .container section article {
-  color: blue;
-  border: 1px solid green;
-  font-size: 1rem;
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
 }
 .container section article.fullW {
   color: green;
   border: 1px solid blue;
   font-size: 3vh;
-  width: 100%;
-  font-size: 3vh;
-  text-align: center;
 }/*# sourceMappingURL=style.css.map */

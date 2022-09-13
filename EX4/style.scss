@@ -35,11 +35,12 @@ $colorTertiary: blue;
     }
     width: 35rem;
   }
+
   h2 {
     padding: 1rem;
     margin-top: 1rem;
     @extend h1;
-    @include colorChangeText(color($colorSecondary),$border: colorBorder($colorPrimary), $fontSize: fontSize($fontSize: 2rem) )
+    @include colorChangeText(color($colorSecondary), $border: colorBorder($colorPrimary));
   }
 
   section {
@@ -48,22 +49,23 @@ $colorTertiary: blue;
     gap: 1rem;
     width: 100%;
     flex-direction: row;
-    article:nth-child(odd) {
-      @include colorChangeText($color: colorFinal($colorTertiary), $border: borderFinal($colorSecondary));
-    }
-    article:nth-child(even) {
-      @include colorChangeText($color: color($colorPrimary), $border: colorBorder($colorSecondary));
-    }
-
     article {
+      &:nth-child(odd) {
+        @include colorChangeText($color: colorFinal($colorTertiary), $border: borderFinal($colorSecondary));
+      }
+      &:nth-child(even) {
+        @include colorChangeText($color: color($colorPrimary), $border: colorBorder($colorSecondary));
+      }
       @include colorChangeText($color: color($colorTertiary), $border: colorBorder($colorSecondary));
     }
 
-    article.fullW {
-      @include colorChangeText($colorSecondary, $colorTertiary, 3vh);
+    article {
       width: 100%;
-      font-size: 3vh;
+      font-size: 24px;
       text-align: center;
+      &.fullW {
+        @include colorChangeText($colorSecondary, $colorTertiary, 3vh);
+      }
     }
   }
 }

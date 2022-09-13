@@ -12,12 +12,16 @@ $colorTertiary: blue;
   $borderFinal: color.adjust($border, $lightness: 2%);
   @return $borderFinal;
 }
+
+// Converter Module Start
+
 @function fontSize($fontsize) {
-  $fontSizeFinal: calc($fontsize);
-  @return $fontSizeFinal;
+  @return math.div($pxValue, 16px) * 1rem;;
 }
 
-@mixin colorChangeText($color: transparent, $border: transparent, $fontsize: 1rem) {
+// Converter Module End
+
+@mixin colorChangeText($color: transparent, $border: transparent, $fontsize: 16px) {
   color: color($color);
   border: 1px solid colorBorder($border);
   font-size: fontSize($fontsize);
