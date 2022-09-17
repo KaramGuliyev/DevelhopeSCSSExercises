@@ -1,27 +1,26 @@
 @use "sass:color";
-
-$colorPrimary: red;
-$colorSecondary: green;
-$colorTertiary: blue;
+@use "sass:math";
+// Added Color Module
+$colorPrimary: color.adjust(red, $lightness: -10%);
+$colorSecondary: color.adjust(green, $lightness: -10%);
+$colorTertiary: color.adjust(blue, $lightness: -10%);
 
 @function color($color) {
-  $colorFinal: color.adjust($color, $lightness: 10%);
-  @return $colorFinal;
+  @return color.adjust($color, $lightness: 10%);
 }
 @function colorBorder($border) {
-  $borderFinal: color.adjust($border, $lightness: 2%);
-  @return $borderFinal;
+  @return color.adjust($border, $lightness: 2%);
 }
 
 // Converter Module Start
 
 @function fontSize($fontsize) {
-  @return math.div($pxValue, 16px) * 1rem;;
+  @return math.div($fontsize, 16) + rem;
 }
 
 // Converter Module End
 
-@mixin colorChangeText($color: transparent, $border: transparent, $fontsize: 16px) {
+@mixin colorChangeText($color: transparent, $border: transparent, $fontsize: 16) {
   color: color($color);
   border: 1px solid colorBorder($border);
   font-size: fontSize($fontsize);
@@ -34,7 +33,7 @@ $colorTertiary: blue;
   text-align: center;
   h1 {
     margin: auto;
-    @include colorChangeText($color: $colorSecondary, $fontsize: 3rem) {
+    @include colorChangeText($color: $colorSecondary, $fontsize: 24) {
       border-bottom: 1px solid $colorTertiary;
     }
     width: 35rem;

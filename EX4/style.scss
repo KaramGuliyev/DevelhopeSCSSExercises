@@ -28,7 +28,7 @@ $colorTertiary: blue;
   @include colorChangeText($border: colorBorder($colorPrimary));
   padding: 1rem;
   text-align: center;
-  h1 {
+  & h1 {
     margin: auto;
     @include colorChangeText($color: color($colorSecondary), $fontSize: fontSize($fontSize: 3rem)) {
       border-bottom: 1px solid $colorTertiary;
@@ -36,20 +36,20 @@ $colorTertiary: blue;
     width: 35rem;
   }
 
-  h2 {
+  & h2 {
     padding: 1rem;
     margin-top: 1rem;
     @extend h1;
     @include colorChangeText(color($colorSecondary), $border: colorBorder($colorPrimary));
   }
 
-  section {
+  & section {
     padding-top: 1rem;
     display: flex;
     gap: 1rem;
     width: 100%;
     flex-direction: row;
-    article {
+    & article {
       &:nth-child(odd) {
         @include colorChangeText($color: colorFinal($colorTertiary), $border: borderFinal($colorSecondary));
       }
@@ -59,7 +59,7 @@ $colorTertiary: blue;
       @include colorChangeText($color: color($colorTertiary), $border: colorBorder($colorSecondary));
     }
 
-    article {
+    & article {
       width: 100%;
       font-size: 24px;
       text-align: center;
